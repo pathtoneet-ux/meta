@@ -141,7 +141,7 @@ const cardVariants = {
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.56, ease: [0.2, 0.8, 0.2, 1] } },
 };
 
-export default function ServicesPage(): JSX.Element {
+export default function ServicesPage() {
   return (
     <motion.section
       initial={{ opacity: 0, y: 6 }}
