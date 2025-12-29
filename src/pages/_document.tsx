@@ -1,4 +1,3 @@
-// pages/_document.tsx
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
@@ -6,6 +5,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* Favicon */}
+          <link rel="icon" href="/favicon.ico?v=1" />
+
           {/* Remix Icons CDN */}
           <link
             href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
@@ -22,23 +24,3 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
-
-
-/*ab yaha hai */
-
-
-import { Html, Head, Main, NextScript } from "next/document";
-
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
-}
