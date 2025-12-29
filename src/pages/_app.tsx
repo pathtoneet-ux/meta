@@ -29,3 +29,23 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+
+/* yaha add kiya hai */
+import { Html, Head, Main, NextScript } from "next/document";
+
+export default function Document() {
+  return (
+    <Html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        {/* Agar png use kar rahe ho */}
+        {/* <link rel="icon" type="image/png" href="/favicon.png" /> */}
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
