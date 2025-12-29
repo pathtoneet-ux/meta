@@ -127,18 +127,29 @@ const SERVICES = [
   },
 ];
 
-/** Framer Motion variants */
+/* ✅ Framer Motion variants (TypeScript SAFE) */
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.12, when: "beforeChildren" },
+    transition: {
+      staggerChildren: 0.12,
+      when: "beforeChildren",
+    },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 18, scale: 0.995 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.56, ease: [0.2, 0.8, 0.2, 1] } },
+  hidden: { opacity: 0, y: 18, scale: 0.98 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.56,
+      ease: "easeOut", // ✅ FIXED (no array)
+    },
+  },
 };
 
 export default function ServicesPage() {
@@ -149,33 +160,27 @@ export default function ServicesPage() {
       transition={{ duration: 0.6 }}
       style={{ background: "#fff" }}
     >
-      {/* Inline styles (no Tailwind dependency) */}
+      {/* Inline styles */}
       <style>{`
-        .svc-wrap { max-width:1100px; margin:0 auto; padding:48px 16px; box-sizing:border-box; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+        .svc-wrap { max-width:1100px; margin:0 auto; padding:48px 16px; font-family: Inter, system-ui; }
         .svc-head { text-align:center; margin-bottom:28px; }
-        .svc-kicker { color:#2563eb; font-weight:600; letter-spacing:.08em; font-size:13px; margin-bottom:8px; }
-        .svc-title { font-size:28px; font-weight:700; color:#0f172a; margin-bottom:6px; }
-        .svc-sub { color:#475569; font-size:14px; max-width:800px; margin:0 auto; }
+        .svc-kicker { color:#2563eb; font-weight:600; letter-spacing:.08em; font-size:13px; }
+        .svc-title { font-size:28px; font-weight:700; color:#0f172a; }
+        .svc-sub { color:#475569; font-size:14px; max-width:800px; margin:8px auto 0; }
 
-        .services-grid { display:grid; grid-template-columns: 1fr; gap:16px; margin-top:18px; }
-        .svc-card { background:#f8fafc; border:1px solid #e6eef9; border-radius:10px; padding:18px; display:flex; gap:14px; align-items:flex-start; box-sizing:border-box; transition: transform .18s ease, box-shadow .18s ease; }
-        .svc-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.06); }
-        .icon-wrap { width:56px; height:56px; border-radius:50%; background:#0f4b4b; display:flex; align-items:center; justify-content:center; color:white; font-size:20px; flex-shrink:0; }
-        .svc-title-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
-        .svc-card-title { font-size:17px; font-weight:700; color:#0f172a; }
-        .svc-bullets { margin-top:10px; color:#334155; font-size:14px; list-style:none; padding-left:0; }
-        .svc-bullets li { display:flex; gap:10px; align-items:flex-start; margin-bottom:6px; }
-        .bullet-svg { margin-top:3px; color:#059669; width:14px; height:14px; flex-shrink:0; }
-        .actions { margin-top:12px; display:flex; justify-content:space-between; align-items:center; }
-        .learn { color:#2563eb; font-weight:600; text-decoration:none; font-size:14px; }
-        .btn { background:#2563eb; color:white; padding:8px 12px; border-radius:8px; border:none; cursor:pointer; font-size:14px; }
+        .services-grid { display:grid; grid-template-columns:1fr; gap:16px; margin-top:24px; }
+        .svc-card { background:#f8fafc; border:1px solid #e6eef9; border-radius:10px; padding:18px; display:flex; gap:14px; }
+        .icon-wrap { width:56px; height:56px; border-radius:50%; background:#0f4b4b; display:flex; align-items:center; justify-content:center; color:#fff; }
+        .svc-card-title { font-size:17px; font-weight:700; }
+        .svc-bullets { margin-top:10px; font-size:14px; list-style:none; padding:0; }
+        .svc-bullets li { display:flex; gap:8px; margin-bottom:6px; }
+        .bullet-svg { color:#059669; width:14px; }
+        .actions { margin-top:12px; display:flex; justify-content:space-between; }
+        .learn { color:#2563eb; font-weight:600; }
+        .btn { background:#2563eb; color:#fff; border:none; padding:8px 12px; border-radius:8px; }
 
-        /* desktop two columns at 1000px and above */
-        @media (min-width: 1000px) {
-          .services-grid { grid-template-columns: 1fr 1fr; gap:20px; }
-          .icon-wrap { width:64px; height:64px; font-size:22px; }
-          .svc-card { padding:22px; }
-          .svc-card-title { font-size:18px; }
+        @media (min-width:1000px) {
+          .services-grid { grid-template-columns:1fr 1fr; }
         }
       `}</style>
 
@@ -184,51 +189,44 @@ export default function ServicesPage() {
           <div className="svc-kicker">OUR SERVICES</div>
           <div className="svc-title">What We Can Offer</div>
           <div className="svc-sub">
-            Practical, end-to-end support for MBBS aspirants — admission guidance, documentation,
-            counselling and post-admission support.
+            Practical, end-to-end support for MBBS aspirants — counselling, documentation &
+            post-admission support.
           </div>
         </div>
 
-        <motion.div className="services-grid" variants={containerVariants} initial="hidden" animate="show">
-          {SERVICES.map((s, idx) => {
+        <motion.div
+          className="services-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
+          {SERVICES.map((s) => {
             const Icon = s.Icon;
             return (
               <motion.article key={s.id} className="svc-card" variants={cardVariants}>
-                <div className="icon-wrap" aria-hidden>
+                <div className="icon-wrap">
                   <Icon />
                 </div>
 
                 <div style={{ flex: 1 }}>
-                  <div className="svc-title-row">
-                    <div id={`${s.id}-title`} className="svc-card-title">
-                      {s.title}
-                    </div>
-                    {s.note && (
-                      <div style={{ background: "#fff7ed", color: "#b45309", fontSize: 12, padding: "4px 8px", borderRadius: 999 }}>
-                        {s.note}
-                      </div>
-                    )}
-                  </div>
+                  <div className="svc-card-title">{s.title}</div>
 
-                  <ul className="svc-bullets" aria-hidden={false}>
-                    {s.bullets &&
-                      s.bullets.map((b, i) => (
-                        <li key={i}>
-                          <svg className="bullet-svg" viewBox="0 0 24 24" fill="none" aria-hidden>
-                            <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                          <div>{b}</div>
-                        </li>
-                      ))}
+                  <ul className="svc-bullets">
+                    {s.bullets.map((b, i) => (
+                      <li key={i}>
+                        <svg className="bullet-svg" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" fill="none" />
+                        </svg>
+                        {b}
+                      </li>
+                    ))}
                   </ul>
 
                   <div className="actions">
                     <a className="learn" href={`#${s.id}`}>
                       Learn more →
                     </a>
-                    <button className="btn" aria-label={`Request ${s.title}`}>
-                      Request
-                    </button>
+                    <button className="btn">Request</button>
                   </div>
                 </div>
               </motion.article>
