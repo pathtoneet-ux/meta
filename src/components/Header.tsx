@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -18,30 +17,63 @@ export default function Header() {
     { label: "Contact Us", href: "/contact" },
   ];
 
+  /* 🔥 HEADER + LOGO HEIGHT AUTO FIX */
   useEffect(() => {
-    const update = () => {
-      const h = headerRef.current?.offsetHeight ?? 90;
+    const updateHeaderSpace = () => {
+      const h = headerRef.current?.offsetHeight ?? 72;
       document.documentElement.style.setProperty("--header-space", `${h}px`);
     };
 
-    update();
-    window.addEventListener("load", update);
-    window.addEventListener("resize", update);
+    const applyResponsive = () => {
+      const isMobile = window.innerWidth < 1024;
 
-    const ro = new ResizeObserver(update);
-    if (headerRef.current) ro.observe(headerRef.current);
+      document.querySelectorAll("header nav").forEach((nav) => {
+        (nav as HTMLElement).style.display = isMobile ? "none" : "flex";
+      });
+
+      document
+        .querySelectorAll("header button[aria-label='Toggle menu']")
+        .forEach((btn) => {
+          (btn as HTMLElement).style.display = isMobile
+            ? "inline-flex"
+            : "none";
+        });
+
+      const logo = document.querySelector("header img") as HTMLImageElement;
+      if (logo) {
+        if (window.innerWidth < 640) {
+          logo.style.height = "48px";
+        } else if (window.innerWidth < 1024) {
+          logo.style.height = "56px";
+        } else {
+          logo.style.height = "68px";
+        }
+      }
+    };
+
+    updateHeaderSpace();
+    applyResponsive();
+
+    window.addEventListener("resize", () => {
+      updateHeaderSpace();
+      applyResponsive();
+    });
+
+    window.addEventListener("load", () => {
+      updateHeaderSpace();
+      applyResponsive();
+    });
 
     return () => {
-      ro.disconnect();
-      window.removeEventListener("load", update);
-      window.removeEventListener("resize", update);
+      window.removeEventListener("resize", updateHeaderSpace);
+      window.removeEventListener("load", updateHeaderSpace);
     };
   }, []);
 
   return (
     <>
       {open && (
-        <div style={styles.overlay} onClick={() => setOpen(false)} aria-hidden>
+        <div style={styles.overlay} onClick={() => setOpen(false)}>
           <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
             <div style={styles.modalHeader}>
               <div />
@@ -65,12 +97,12 @@ export default function Header() {
         </div>
       )}
 
-      <header ref={headerRef} style={styles.header} role="banner">
+      <header ref={headerRef} style={styles.header}>
         <div style={styles.container}>
           <div style={styles.grid}>
             <div style={styles.left}>
               <Link href="/">
-                <img src="/logo.png" alt="logo" style={styles.logo} />
+                <img src="/logo.png" alt="PathToNeet Logo" style={styles.logo} />
               </Link>
             </div>
 
@@ -87,7 +119,7 @@ export default function Header() {
             <div style={styles.right}>
               <button
                 aria-label="Toggle menu"
-                onClick={() => setOpen((s) => !s)}
+                onClick={() => setOpen(!open)}
                 style={styles.hamburger}
               >
                 {open ? "✕" : "≡"}
@@ -100,25 +132,22 @@ export default function Header() {
   );
 }
 
-/* Inline styles */
+/* 🎨 STYLES */
 const styles: Record<string, any> = {
   header: {
     position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
+    inset: "0 0 auto 0",
     zIndex: 9999,
     background: "rgba(255,255,255,0.98)",
     boxShadow: "0 1px 0 rgba(0,0,0,0.05)",
-    backdropFilter: "saturate(120%) blur(6px)",
+    backdropFilter: "blur(6px)",
   },
 
-  /* 🔥 CONTAINER HEIGHT INCREASED */
   container: {
     maxWidth: "1200px",
     margin: "0 auto",
     padding: "0 16px",
-    height: "90px",          // ⬅ was 64px
+    height: "72px",
     display: "flex",
     alignItems: "center",
   },
@@ -130,45 +159,27 @@ const styles: Record<string, any> = {
     alignItems: "center",
   },
 
-  left: {
-    display: "flex",
-    alignItems: "center",
-  },
-  center: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  right: {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  },
+  left: { display: "flex", alignItems: "center" },
+  center: { display: "flex", justifyContent: "center" },
+  right: { display: "flex", justifyContent: "flex-end" },
 
-  /* 🔥 LOGO – BADA + NO OVERLAP */
   logo: {
-    height: "90px",
-    maxHeight: "100%",
+    height: "64px",
     width: "auto",
     objectFit: "contain",
+    transition: "height 0.25s ease",
   },
 
-  nav: {
-    display: "flex",
-    gap: "28px",
-    alignItems: "center",
-  },
+  nav: { display: "flex", gap: "28px" },
+
   navLink: {
     fontSize: "15px",
+    fontWeight: 600,
     color: "#374151",
     textDecoration: "none",
-    fontWeight: 600,
   },
 
-  /* 🚫 HAMBURGER UNCHANGED */
   hamburger: {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
     padding: "6px 10px",
     borderRadius: "6px",
     border: "1px solid #e5e7eb",
@@ -180,69 +191,45 @@ const styles: Record<string, any> = {
   overlay: {
     position: "fixed",
     inset: 0,
-    zIndex: 9988,
     background: "rgba(0,0,0,0.45)",
+    zIndex: 9988,
+    paddingTop: "72px",
     display: "flex",
-    alignItems: "flex-start",
     justifyContent: "center",
-    paddingTop: "70px",
   },
+
   modal: {
     width: "100%",
     maxWidth: "360px",
     background: "#fff",
     borderRadius: "12px",
-    overflow: "hidden",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
   },
+
   modalHeader: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
     padding: "14px 18px",
-    borderBottom: "1px solid #efefef",
+    borderBottom: "1px solid #eee",
+    display: "flex",
+    justifyContent: "space-between",
   },
+
   closeBtn: {
-    background: "transparent",
     border: "none",
+    background: "transparent",
     fontSize: "20px",
     cursor: "pointer",
   },
+
   modalNav: {
     padding: "18px",
     display: "flex",
     flexDirection: "column",
-    gap: "12px",
+    gap: "14px",
   },
+
   modalLink: {
     fontSize: "18px",
+    fontWeight: 600,
     color: "#0b5156",
     textDecoration: "none",
-    fontWeight: 600,
   },
 };
-
-/* Responsive behavior – unchanged */
-if (typeof window !== "undefined") {
-  const applyResponsive = () => {
-    const hideOnSmall = window.innerWidth < 1024;
-
-    const navs = document.querySelectorAll("header nav");
-    navs.forEach((nav) => {
-      (nav as HTMLElement).style.display = hideOnSmall ? "none" : "flex";
-    });
-
-    const hamburgers = document.querySelectorAll(
-      "header button[aria-label='Toggle menu']"
-    );
-    hamburgers.forEach((btn) => {
-      (btn as HTMLElement).style.display = hideOnSmall
-        ? "inline-flex"
-        : "none";
-    });
-  };
-
-  window.addEventListener("resize", applyResponsive);
-  window.addEventListener("load", applyResponsive);
-  applyResponsive();
-}
