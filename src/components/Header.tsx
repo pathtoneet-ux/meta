@@ -14,13 +14,13 @@ export default function Header() {
     { label: "Services", href: "/services" },
     { label: "Courses", href: "/courses" },
     { label: "Colleges", href: "/colleges" },
-    { label: "NEET 2026", href: "/neet-2026" },
+    { label: "NEET 2025", href: "/neet-2025" },
     { label: "Contact Us", href: "/contact" },
   ];
 
   useEffect(() => {
     const update = () => {
-      const h = headerRef.current?.offsetHeight ?? 72;
+      const h = headerRef.current?.offsetHeight ?? 90;
       document.documentElement.style.setProperty("--header-space", `${h}px`);
     };
 
@@ -40,7 +40,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Mobile modal */}
       {open && (
         <div style={styles.overlay} onClick={() => setOpen(false)} aria-hidden>
           <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -66,22 +65,15 @@ export default function Header() {
         </div>
       )}
 
-      {/* Header */}
       <header ref={headerRef} style={styles.header} role="banner">
         <div style={styles.container}>
           <div style={styles.grid}>
-            {/* LEFT: Logo */}
             <div style={styles.left}>
               <Link href="/">
-                <img
-                  src="/logo.png"
-                  alt="PathToNeet Logo"
-                  style={styles.logo}
-                />
+                <img src="/logo.png" alt="logo" style={styles.logo} />
               </Link>
             </div>
 
-            {/* CENTER: Nav */}
             <div style={styles.center}>
               <nav style={styles.nav}>
                 {links.map((l) => (
@@ -92,7 +84,6 @@ export default function Header() {
               </nav>
             </div>
 
-            {/* RIGHT: Hamburger */}
             <div style={styles.right}>
               <button
                 aria-label="Toggle menu"
@@ -121,20 +112,24 @@ const styles: Record<string, any> = {
     boxShadow: "0 1px 0 rgba(0,0,0,0.05)",
     backdropFilter: "saturate(120%) blur(6px)",
   },
+
+  /* 🔥 CONTAINER HEIGHT INCREASED */
   container: {
     maxWidth: "1200px",
     margin: "0 auto",
     padding: "0 16px",
-    height: "72px", // ✅ HEADER HEIGHT INCREASED
+    height: "90px",          // ⬅ was 64px
     display: "flex",
     alignItems: "center",
   },
+
   grid: {
     width: "100%",
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
     alignItems: "center",
   },
+
   left: {
     display: "flex",
     alignItems: "center",
@@ -148,12 +143,15 @@ const styles: Record<string, any> = {
     justifyContent: "flex-end",
     alignItems: "center",
   },
+
+  /* 🔥 LOGO – BADA + NO OVERLAP */
   logo: {
-    height: "52px", // ✅ LOGO SIZE INCREASED
+    height: "90px",
+    maxHeight: "100%",
     width: "auto",
     objectFit: "contain",
-    cursor: "pointer",
   },
+
   nav: {
     display: "flex",
     gap: "28px",
@@ -165,6 +163,8 @@ const styles: Record<string, any> = {
     textDecoration: "none",
     fontWeight: 600,
   },
+
+  /* 🚫 HAMBURGER UNCHANGED */
   hamburger: {
     display: "inline-flex",
     alignItems: "center",
@@ -176,6 +176,7 @@ const styles: Record<string, any> = {
     fontWeight: 700,
     cursor: "pointer",
   },
+
   overlay: {
     position: "fixed",
     inset: 0,
@@ -184,7 +185,7 @@ const styles: Record<string, any> = {
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "center",
-    paddingTop: "80px",
+    paddingTop: "70px",
   },
   modal: {
     width: "100%",
@@ -221,7 +222,7 @@ const styles: Record<string, any> = {
   },
 };
 
-/* Responsive behavior */
+/* Responsive behavior – unchanged */
 if (typeof window !== "undefined") {
   const applyResponsive = () => {
     const hideOnSmall = window.innerWidth < 1024;
