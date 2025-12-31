@@ -4,7 +4,6 @@ import React, { useState } from "react";
 export default function CounsellingPage() {
   const [success, setSuccess] = useState(false);
 
-  // 🔹 FAST SUBMIT HANDLER
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -17,11 +16,9 @@ export default function CounsellingPage() {
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
 
-    // ✅ INSTANT UX
     setSuccess(true);
     form.reset();
 
-    // 🔁 BACKGROUND EMAIL SEND
     fetch("/api/lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -34,12 +31,8 @@ export default function CounsellingPage() {
   return (
     <>
       <Head>
-        <title>
-          NEET Counselling 2026 | MBBS Admission Guidance – PathToNEET
-        </title>
-
+        <title>NEET Counselling 2026 | MBBS Admission Guidance – PathToNEET</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <meta
           name="description"
           content="Get expert NEET counselling and MBBS admission guidance in India. Book personalised counselling with PathToNEET."
@@ -132,7 +125,6 @@ export default function CounsellingPage() {
               <h2>Contact Information</h2>
 
               <p>
-                
                 <strong>Phone:</strong> +91-9217026137
               </p>
               <p>
@@ -180,9 +172,10 @@ export default function CounsellingPage() {
             min-height: 100vh;
           }
 
+          /* 🔥 GAP FIXED HERE */
           .hero {
             background: #ffffff;
-            padding-top: calc(var(--header-space, 64px) + 20px);
+            padding-top: 20px; /* ❌ header-space removed */
             padding-left: 16px;
             padding-right: 16px;
             padding-bottom: 50px;
