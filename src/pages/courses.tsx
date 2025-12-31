@@ -39,7 +39,7 @@ type Course = {
   Icon?: React.FC;
 };
 
-/* ---------- Course Data (FULL DETAILS) ---------- */
+/* ---------- Course Data ---------- */
 const COURSES: Course[] = [
   {
     id: "mbbs",
@@ -165,18 +165,23 @@ export default function CoursesPage() {
 
     const applyCols = () => {
       el.style.display = "grid";
-      el.style.gridTemplateColumns = window.innerWidth >= 1024 ? "repeat(2,1fr)" : "1fr";
+      el.style.gridTemplateColumns =
+        window.innerWidth >= 1024 ? "repeat(2,1fr)" : "1fr";
       el.style.gap = "24px";
     };
+
     applyCols();
     window.addEventListener("resize", applyCols);
     return () => window.removeEventListener("resize", applyCols);
   }, []);
 
   return (
-    <main style={{ paddingTop: "var(--header-space,96px)" }} className="bg-white min-h-screen px-4 py-12">
+    // ✅ FIXED: header spacing yahan se hata diya
+    <main className="bg-white min-h-screen px-4 py-12">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">Undergraduate Medical Courses</h1>
+        <h1 className="text-3xl font-bold mb-6">
+          Undergraduate Medical Courses
+        </h1>
 
         <section ref={gridRef}>
           {COURSES.map((c) => (
@@ -196,7 +201,10 @@ export default function CoursesPage() {
                 <div className="duration">{c.duration}</div>
               </div>
 
-              <button className="btn" onClick={() => setOpen(open === c.id ? null : c.id)}>
+              <button
+                className="btn"
+                onClick={() => setOpen(open === c.id ? null : c.id)}
+              >
                 View Details
               </button>
 

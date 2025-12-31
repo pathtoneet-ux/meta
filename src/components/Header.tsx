@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
   const headerRef = useRef<HTMLElement | null>(null);
   const [open, setOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   const links = [
     { label: "Home", href: "/" },
@@ -17,217 +19,248 @@ export default function Header() {
     { label: "Contact Us", href: "/contact" },
   ];
 
-  /* 🔥 HEADER + LOGO HEIGHT AUTO FIX */
+  /* header height -> page offset */
   useEffect(() => {
-    const updateHeaderSpace = () => {
+    const update = () => {
       const h = headerRef.current?.offsetHeight ?? 72;
       document.documentElement.style.setProperty("--header-space", `${h}px`);
     };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
-    const applyResponsive = () => {
-      const isMobile = window.innerWidth < 1024;
-
-      document.querySelectorAll("header nav").forEach((nav) => {
-        (nav as HTMLElement).style.display = isMobile ? "none" : "flex";
-      });
-
-      document
-        .querySelectorAll("header button[aria-label='Toggle menu']")
-        .forEach((btn) => {
-          (btn as HTMLElement).style.display = isMobile
-            ? "inline-flex"
-            : "none";
-        });
-
-      const logo = document.querySelector("header img") as HTMLImageElement;
-      if (logo) {
-        if (window.innerWidth < 640) {
-          logo.style.height = "48px";
-        } else if (window.innerWidth < 1024) {
-          logo.style.height = "56px";
-        } else {
-          logo.style.height = "68px";
-        }
-      }
+  /* responsive logic */
+  useEffect(() => {
+    const apply = () => {
+      const d = window.innerWidth >= 1024;
+      setIsDesktop(d);
+      if (d) setOpen(false);
     };
-
-    updateHeaderSpace();
-    applyResponsive();
-
-    window.addEventListener("resize", () => {
-      updateHeaderSpace();
-      applyResponsive();
-    });
-
-    window.addEventListener("load", () => {
-      updateHeaderSpace();
-      applyResponsive();
-    });
-
-    return () => {
-      window.removeEventListener("resize", updateHeaderSpace);
-      window.removeEventListener("load", updateHeaderSpace);
-    };
+    apply();
+    window.addEventListener("resize", apply);
+    return () => window.removeEventListener("resize", apply);
   }, []);
 
   return (
     <>
-      {open && (
+      {/* MOBILE OVERLAY */}
+      {!isDesktop && open && (
         <div style={styles.overlay} onClick={() => setOpen(false)}>
           <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
-            <div style={styles.modalHeader}>
-              <div />
-              <button onClick={() => setOpen(false)} style={styles.closeBtn}>
-                ✕
-              </button>
-            </div>
             <nav style={styles.modalNav}>
               {links.map((l) => (
-                <a
+                <Link
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
                   style={styles.modalLink}
                 >
                   {l.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
         </div>
       )}
 
+      {/* HEADER */}
       <header ref={headerRef} style={styles.header}>
         <div style={styles.container}>
           <div style={styles.grid}>
+            {/* LOGO */}
             <div style={styles.left}>
               <Link href="/">
-                <img src="/logo.png" alt="PathToNeet Logo" style={styles.logo} />
+                <Image
+                  src="/logo.png"
+                  alt="PathToNEET Logo"
+                  width={200}
+                  height={80}
+                  priority
+                  className="site-logo"
+                />
               </Link>
             </div>
 
+            {/* DESKTOP MENU */}
             <div style={styles.center}>
-              <nav style={styles.nav}>
-                {links.map((l) => (
-                  <a key={l.href} href={l.href} style={styles.navLink}>
-                    {l.label}
-                  </a>
-                ))}
-              </nav>
+              {isDesktop && (
+                <nav style={styles.nav}>
+                  {links.map((l) => (
+                    <Link
+                      key={l.href}
+                      href={l.href}
+                      className="menu-link"
+                      style={styles.navLink}
+                    >
+                      {l.label}
+                      <span className="underline" />
+                    </Link>
+                  ))}
+                </nav>
+              )}
             </div>
 
+            {/* HAMBURGER */}
             <div style={styles.right}>
-              <button
-                aria-label="Toggle menu"
-                onClick={() => setOpen(!open)}
-                style={styles.hamburger}
-              >
-                {open ? "✕" : "≡"}
-              </button>
+              {!isDesktop && (
+                <button
+                  aria-label="Toggle menu"
+                  onClick={() => setOpen((s) => !s)}
+                  className={open ? "hamburger open" : "hamburger"}
+                  style={styles.hamburgerBtn}
+                >
+                  <span />
+                  <span />
+                  <span />
+                </button>
+              )}
             </div>
           </div>
         </div>
       </header>
+
+      {/* STYLES */}
+      <style jsx>{`
+        /* ---------- MENU ---------- */
+        .menu-link {
+          position: relative;
+          transition: color 0.25s ease, transform 0.25s ease;
+        }
+
+        .menu-link:hover {
+          color: #0b5156;
+          transform: translateY(-2px);
+        }
+
+        .underline {
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 100%;
+          height: 2px;
+          background: #0b5156;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.25s ease;
+        }
+
+        .menu-link:hover .underline {
+          transform: scaleX(1);
+        }
+
+        /* ---------- HAMBURGER ---------- */
+        .hamburger {
+          width: 32px;
+          height: 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .hamburger span {
+          height: 3px;
+          width: 100%;
+          background: #111;
+          border-radius: 3px;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+
+        /* ---------- LOGO SIZE ---------- */
+        .site-logo {
+          height: 44px;
+          width: auto;
+        }
+
+        @media (max-width: 1023px) {
+          .site-logo {
+            height: 100px; /* 🔥 mobile BIG logo */
+          }
+        }
+      `}</style>
     </>
   );
 }
 
-/* 🎨 STYLES */
+/* ---------- INLINE STYLES ---------- */
 const styles: Record<string, any> = {
   header: {
     position: "fixed",
-    inset: "0 0 auto 0",
+    top: 0,
+    left: 0,
+    right: 0,
     zIndex: 9999,
-    background: "rgba(255,255,255,0.98)",
-    boxShadow: "0 1px 0 rgba(0,0,0,0.05)",
-    backdropFilter: "blur(6px)",
+    background: "#ffffff",
+    borderBottom: "1px solid #e5e7eb",
   },
-
   container: {
     maxWidth: "1200px",
     margin: "0 auto",
     padding: "0 16px",
-    height: "72px",
+    minHeight: "80px", // 🔥 mobile ko space
     display: "flex",
     alignItems: "center",
   },
-
   grid: {
     width: "100%",
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
     alignItems: "center",
   },
-
   left: { display: "flex", alignItems: "center" },
   center: { display: "flex", justifyContent: "center" },
   right: { display: "flex", justifyContent: "flex-end" },
 
-  logo: {
-    height: "64px",
-    width: "auto",
-    objectFit: "contain",
-    transition: "height 0.25s ease",
-  },
-
   nav: { display: "flex", gap: "28px" },
-
   navLink: {
     fontSize: "15px",
     fontWeight: 600,
     color: "#374151",
     textDecoration: "none",
+    paddingBottom: "4px",
   },
 
-  hamburger: {
-    padding: "6px 10px",
-    borderRadius: "6px",
-    border: "1px solid #e5e7eb",
-    background: "#fff",
-    fontWeight: 700,
-    cursor: "pointer",
+  hamburgerBtn: {
+    background: "transparent",
+    border: "none",
+    padding: 0,
   },
 
   overlay: {
     position: "fixed",
     inset: 0,
+    zIndex: 9998,
     background: "rgba(0,0,0,0.45)",
-    zIndex: 9988,
-    paddingTop: "72px",
     display: "flex",
     justifyContent: "center",
+    paddingTop: "90px",
   },
-
   modal: {
     width: "100%",
     maxWidth: "360px",
     background: "#fff",
     borderRadius: "12px",
+    overflow: "hidden",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
   },
-
-  modalHeader: {
-    padding: "14px 18px",
-    borderBottom: "1px solid #eee",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-
-  closeBtn: {
-    border: "none",
-    background: "transparent",
-    fontSize: "20px",
-    cursor: "pointer",
-  },
-
   modalNav: {
-    padding: "18px",
+    padding: "20px",
     display: "flex",
     flexDirection: "column",
     gap: "14px",
   },
-
   modalLink: {
-    fontSize: "18px",
+    fontSize: "17px",
     fontWeight: 600,
     color: "#0b5156",
     textDecoration: "none",

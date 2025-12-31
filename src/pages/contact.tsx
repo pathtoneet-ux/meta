@@ -15,7 +15,7 @@ export default function ContactPage() {
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-      source: "Contact Page", // 👈 identify kaha se lead aayi
+      source: "Contact Page",
     };
 
     // ✅ INSTANT UX
@@ -25,9 +25,7 @@ export default function ContactPage() {
     // 🔁 BACKGROUND EMAIL SEND
     fetch("/api/lead", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     }).catch(() => {
       console.error("Email send failed");
@@ -134,9 +132,7 @@ export default function ContactPage() {
             <div className="card">
               <h2>Contact Information</h2>
 
-              <p> 
-
-                
+              <p>
                 <strong>Phone:</strong> +91-9217026137
               </p>
               <p>
@@ -184,9 +180,10 @@ export default function ContactPage() {
             min-height: 100vh;
           }
 
+          /* ✅ FIXED: header space double add nahi hoga */
           .hero {
             background: #ffffff;
-            padding-top: calc(var(--header-space, 64px) + 20px);
+            padding-top: 20px;
             padding-left: 16px;
             padding-right: 16px;
             padding-bottom: 50px;
