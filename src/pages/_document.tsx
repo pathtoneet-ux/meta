@@ -5,6 +5,12 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* ✅ Google Search Console Verification */}
+          <meta
+            name="google-site-verification"
+            content="cfVMmdeWU7YAmjtelTWD4oJCXjcouNbLhzWeRDvwuB0"
+          />
+
           {/* Favicon */}
           <link rel="icon" href="/favicon.ico?v=1" />
 
