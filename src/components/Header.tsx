@@ -15,7 +15,7 @@ export default function Header() {
     { label: "Services", href: "/services" },
     { label: "Courses", href: "/courses" },
     { label: "Colleges", href: "/colleges" },
-    { label: "NEET 2025", href: "/neet-2025" },
+    { label: "NEET 2026", href: "/neet-2026" },
     { label: "Contact Us", href: "/contact" },
   ];
 
