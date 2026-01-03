@@ -121,7 +121,7 @@ export default function AboutPage() {
                   Trusted by NEET Aspirants Across India
                 </h2>
                 <p style={{ marginTop: 15, fontSize: 17, color: "#334155" }}>
-                  We have successfully guided <strong>500+ NEET aspirants</strong>
+                  We have successfully guided <strong>5000+ NEET aspirants</strong>
                   across India. Students trust us for our realistic guidance,
                   updated counselling knowledge, and honest admission strategy.
                 </p>
