@@ -22,7 +22,7 @@ export default function NEET2026Page() {
       </Head>
 
       <div style={{ fontFamily: "system-ui, sans-serif", background: "#f5f7fb" }}>
-        {/* HERO */}
+        {/* ================= HERO ================= */}
         <section
           style={{
             background: "linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb)",
@@ -40,9 +40,11 @@ export default function NEET2026Page() {
           </h1>
 
           <p style={{ fontSize: 18, marginTop: 20, opacity: 0.9 }}>
-            A complete, in-depth guide for students preparing for NEET 2026 and MBBS admission.
+            One complete, in-depth guide for students preparing for NEET 2026 and
+            MBBS admission in India.
           </p>
 
+          {/* PRIMARY CTA */}
           <div style={{ marginTop: 40 }}>
             <button
               onClick={() => (window.location.href = "/contact")}
@@ -57,69 +59,113 @@ export default function NEET2026Page() {
                 cursor: "pointer",
               }}
             >
-              Talk to NEET Expert
+              📞 Talk to NEET Expert
+            </button>
+          </div>
+
+          {/* SECONDARY CTA – NEW */}
+          <div style={{ marginTop: 18 }}>
+            <button
+              onClick={() => (window.location.href = "/neet-counselling-2026")}
+              style={{
+                padding: "14px 44px",
+                borderRadius: 999,
+                background: "transparent",
+                color: "#fff",
+                fontSize: 16,
+                fontWeight: 700,
+                border: "2px solid #facc15",
+                cursor: "pointer",
+              }}
+            >
+              📘 NEET Counselling 2026 – Complete Process
             </button>
           </div>
         </section>
 
-        {/* CONTENT */}
+        {/* ================= CONTENT ================= */}
         <section style={{ padding: "80px 20px" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", color: "#334155", fontSize: 17, lineHeight: 1.8 }}>
-
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "0 auto",
+              color: "#334155",
+              fontSize: 17,
+              lineHeight: 1.8,
+            }}
+          >
             {/* OVERVIEW */}
             <h2>NEET 2026 Overview</h2>
             <p>
-              NEET 2026 (National Eligibility cum Entrance Test) is the only national-level
-              medical entrance examination for admission to MBBS, BDS, AYUSH and other
-              undergraduate medical courses in India. Every student aspiring for
-              <strong> MBBS Admission 2026</strong> in government or private medical colleges
-              must qualify NEET.
+              NEET 2026 (National Eligibility cum Entrance Test) is the single
+              national-level medical entrance examination for admission to MBBS,
+              BDS, AYUSH and other undergraduate medical courses in India. Every
+              student aspiring for <strong>MBBS Admission 2026</strong> must
+              qualify NEET.
             </p>
             <p>
-              The exam is conducted by the National Testing Agency (NTA) and is mandatory
-              not only for medical colleges in India but also for Indian students seeking
-              MBBS admission abroad as per National Medical Commission (NMC) rules.
+              The exam is conducted by the National Testing Agency (NTA) and is
+              mandatory for admission in government, private and deemed medical
+              colleges. NEET qualification is also compulsory for Indian
+              students planning to study MBBS abroad.
             </p>
 
-            {/* DATES */}
-            <h2 style={{ marginTop: 50 }}>NEET 2026 Important Dates (Expected)</h2>
-            <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 20 }}>
+            {/* IMPORTANT DATES */}
+            <h2 style={{ marginTop: 60 }}>
+              NEET 2026 Important Dates (Expected)
+            </h2>
+            <table
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                marginTop: 20,
+              }}
+            >
               <tbody>
                 {[
                   ["Notification Release", "December 2025"],
-                  ["Application Form Start", "January 2026"],
+                  ["Application Start", "January 2026"],
                   ["Last Date to Apply", "February 2026"],
                   ["Admit Card", "April 2026"],
                   ["NEET 2026 Exam Date", "May 2026 (Sunday)"],
                   ["Result Declaration", "June 2026"],
                 ].map(([a, b]) => (
                   <tr key={a}>
-                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>{a}</td>
-                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>{b}</td>
+                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>
+                      {a}
+                    </td>
+                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>
+                      {b}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
             {/* ELIGIBILITY */}
-            <h2 style={{ marginTop: 60 }}>NEET 2026 Eligibility Criteria</h2>
-            <p>
-              To appear for NEET 2026, candidates must fulfill the eligibility conditions
-              prescribed by NMC. These include age limit, educational qualification and
-              minimum qualifying marks.
-            </p>
+            <h2 style={{ marginTop: 60 }}>
+              NEET 2026 Eligibility Criteria
+            </h2>
             <ul>
-              <li>Minimum Age: 17 years as on 31 December 2026</li>
+              <li>Minimum Age: 17 years (as on 31 December 2026)</li>
               <li>Qualification: 10+2 with Physics, Chemistry & Biology</li>
               <li>General Category: Minimum 50% in PCB</li>
-              <li>OBC/SC/ST Category: Minimum 40% in PCB</li>
+              <li>OBC / SC / ST Category: Minimum 40% in PCB</li>
               <li>No upper age limit</li>
               <li>Unlimited attempts allowed</li>
             </ul>
 
-            {/* PATTERN */}
-            <h2 style={{ marginTop: 60 }}>NEET 2026 Exam Pattern (Detailed)</h2>
-            <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 20 }}>
+            {/* EXAM PATTERN */}
+            <h2 style={{ marginTop: 60 }}>
+              NEET 2026 Exam Pattern (Detailed)
+            </h2>
+            <table
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                marginTop: 20,
+              }}
+            >
               <tbody>
                 {[
                   ["Mode of Exam", "Offline (Pen & Paper)"],
@@ -128,89 +174,115 @@ export default function NEET2026Page() {
                   ["Marking Scheme", "+4 for correct, –1 for incorrect"],
                   ["Subjects", "Physics, Chemistry, Biology"],
                   ["Duration", "3 Hours 20 Minutes"],
-                  ["Languages", "13 languages including English & Hindi"],
+                  ["Languages", "13 Languages (English, Hindi & Regional)"],
                 ].map(([a, b]) => (
                   <tr key={a}>
-                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>{a}</td>
-                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>{b}</td>
+                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>
+                      {a}
+                    </td>
+                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>
+                      {b}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
             <p style={{ marginTop: 15 }}>
-              <strong>Example:</strong> If a student attempts 150 questions, gets 120 correct
-              and 30 wrong, the score will be (120 × 4) – (30 × 1) = <strong>450 marks</strong>.
+              <strong>Example:</strong> If a student attempts 150 questions,
+              answers 120 correctly and 30 incorrectly, the score will be (120 ×
+              4) − (30 × 1) = <strong>450 marks</strong>.
             </p>
 
             {/* SYLLABUS */}
-            <h2 style={{ marginTop: 60 }}>NEET 2026 Syllabus (Official & Detailed)</h2>
+            <h2 style={{ marginTop: 60 }}>
+              NEET 2026 Syllabus (Official)
+            </h2>
 
-            <h3>Physics Syllabus</h3>
+            <h3>Physics</h3>
             <p>
-              Physics syllabus is based on NCERT Class 11 and 12 and includes Mechanics,
-              Laws of Motion, Work Energy Power, Thermodynamics, Electrostatics,
-              Current Electricity, Magnetic Effects, Optics and Modern Physics.
+              Mechanics, Laws of Motion, Work Energy Power, Thermodynamics,
+              Electrostatics, Current Electricity, Magnetic Effects, Optics and
+              Modern Physics.
             </p>
 
-            <h3>Chemistry Syllabus</h3>
+            <h3>Chemistry</h3>
             <p>
-              Chemistry is divided into Physical Chemistry (mole concept,
-              thermodynamics), Organic Chemistry (hydrocarbons, biomolecules,
-              reactions) and Inorganic Chemistry (periodic table, coordination compounds).
+              Physical Chemistry (Mole Concept, Thermodynamics), Organic
+              Chemistry (Hydrocarbons, Biomolecules) and Inorganic Chemistry
+              (Periodic Table, Coordination Compounds).
             </p>
 
-            <h3>Biology Syllabus</h3>
+            <h3>Biology</h3>
             <p>
-              Biology carries the highest weightage and includes Diversity in Living World,
-              Cell Structure, Human Physiology, Genetics & Evolution, Ecology,
-              Biotechnology and Environment.
+              Diversity in Living World, Cell Structure, Human Physiology,
+              Genetics & Evolution, Ecology, Biotechnology and Environment.
             </p>
 
-            {/* STRATEGY */}
-            <h2 style={{ marginTop: 60 }}>NEET 2026 Preparation Strategy</h2>
+            {/* PREPARATION */}
+            <h2 style={{ marginTop: 60 }}>
+              NEET 2026 Preparation Strategy
+            </h2>
             <ul>
-              <li>Follow NCERT textbooks strictly</li>
-              <li>Prepare Biology daily due to high weightage</li>
-              <li>Attempt mock tests weekly</li>
-              <li>Analyze mistakes and weak areas</li>
-              <li>Maintain revision notes</li>
+              <li>Strictly follow NCERT textbooks</li>
+              <li>Focus more on Biology (50% weightage)</li>
+              <li>Attempt mock tests regularly</li>
+              <li>Revise weak areas frequently</li>
+              <li>Analyse mistakes after every test</li>
             </ul>
 
             {/* CUTOFF */}
-            <h2 style={{ marginTop: 60 }}>NEET 2026 Expected Cutoff</h2>
-            <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 20 }}>
+            <h2 style={{ marginTop: 60 }}>
+              NEET 2026 Expected Cutoff
+            </h2>
+            <table
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                marginTop: 20,
+              }}
+            >
               <tbody>
                 {[
                   ["General", "135 – 720"],
                   ["OBC", "110 – 134"],
-                  ["SC/ST", "95 – 109"],
+                  ["SC / ST", "95 – 109"],
                 ].map(([a, b]) => (
                   <tr key={a}>
-                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>{a}</td>
-                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>{b}</td>
+                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>
+                      {a}
+                    </td>
+                    <td style={{ border: "1px solid #e5e7eb", padding: 12 }}>
+                      {b}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            {/* COUNSELLING */}
-            <h2 style={{ marginTop: 60 }}>NEET 2026 Counselling Process</h2>
+            {/* COUNSELLING LINK */}
+            <h2 style={{ marginTop: 60 }}>
+              NEET Counselling 2026
+            </h2>
             <p>
-              After NEET results, counselling is conducted through MCC for 15% All India
-              Quota seats and by respective states for 85% state quota seats. Private and
-              deemed universities conduct separate counselling rounds.
+              After NEET results, admission is done through counselling. To
+              understand AIQ, state quota, choice filling and seat allotment in
+              detail, read our complete counselling guide.
             </p>
 
-            {/* FAQ */}
-            <h2 style={{ marginTop: 60 }}>NEET 2026 FAQs</h2>
-            <ul>
-              <li>Is NEET mandatory for MBBS 2026? – Yes</li>
-              <li>Will syllabus change for NEET 2026? – As per NMC, syllabus is finalised</li>
-              <li>Can I study MBBS abroad after NEET? – Yes</li>
-              <li>Is there negative marking? – Yes, –1 mark</li>
-              <li>How many attempts are allowed? – Unlimited</li>
-            </ul>
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling-2026"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                NEET Counselling 2026 – Complete Step-by-Step Guide
+              </a>
+            </p>
 
             {/* FINAL CTA */}
             <div
@@ -223,26 +295,30 @@ export default function NEET2026Page() {
                 marginTop: 80,
               }}
             >
-              <h2>Need Expert Guidance for NEET 2026?</h2>
-              <p>Get personalised counselling and college selection support.</p>
-              <button
-                onClick={() => (window.location.href = "/contact")}
-                style={{
-                  marginTop: 25,
-                  padding: "14px 44px",
-                  borderRadius: 999,
-                  background: "#fff",
-                  color: "#ff6a00",
-                  fontSize: 17,
-                  fontWeight: 700,
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
-                Talk To Expert
-              </button>
-            </div>
+              <h2>Need Expert Help for NEET 2026?</h2>
+              <p>
+                Get personalised counselling and secure the best possible
+                medical seat.
+              </p>
 
+              <div style={{ marginTop: 25 }}>
+                <button
+                  onClick={() => (window.location.href = "/contact")}
+                  style={{
+                    padding: "14px 44px",
+                    borderRadius: 999,
+                    background: "#fff",
+                    color: "#ff6a00",
+                    fontSize: 17,
+                    fontWeight: 700,
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  Talk to NEET Expert
+                </button>
+              </div>
+            </div>
           </div>
         </section>
       </div>
