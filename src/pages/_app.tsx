@@ -10,24 +10,25 @@ import LeadPopup from "@/components/LeadPopup";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      {/* FIXED HEADER */}
+      {/* 🔒 FIXED HEADER */}
       <Header />
 
-      {/* OPTIONAL POPUP */}
-      <LeadPopup />
-
-      {/* ✅ CONTENT OFFSET = HEADER HEIGHT (72px) */}
+      {/* 🔽 PAGE CONTENT (header space auto adjust) */}
       <main
         style={{
-          paddingTop: "72px", // ⚠️ MUST MATCH Header height
+          paddingTop: "var(--header-space, 72px)",
           minHeight: "100vh",
         }}
       >
         <Component {...pageProps} />
       </main>
 
+      {/* 🔻 FOOTER */}
       <Footer />
+
+      {/* 🔥 GLOBAL COMPONENTS (ALL PAGES) */}
       <WhatsAppButton />
+      <LeadPopup />
     </>
   );
 }

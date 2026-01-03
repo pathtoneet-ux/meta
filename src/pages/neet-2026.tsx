@@ -281,9 +281,170 @@ export default function NEET2026Page() {
                 }}
               >
                 NEET Counselling 2026 – Complete Step-by-Step Guide
+            
+            
               </a>
             </p>
 
+             <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/uttar-pradesh"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Uttar Pradesh Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+<p>
+              👉{" "}
+              <a
+                href="/neet-counselling/bihar"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Bihar Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/rajasthan"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Rajasthan Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/madhya-pradesh"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Madhya Pradesh Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/maharashtra"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Maharashtra Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/karnataka"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Karnataka Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/haryana"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Haryana Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/punjab"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Punjab Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/gujarat"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Gujrat Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
+
+            <p>
+              👉{" "}
+              <a
+                href="/neet-counselling/tamil-nadu"
+                style={{
+                  color: "#2563eb",
+                  fontWeight: 600,
+                  textDecoration: "underline",
+                }}
+              >
+                Tamil Nadu Counselling 2026 - Complete Step-by-step Guide
+            
+            
+              </a>
+            </p>
             {/* FINAL CTA */}
             <div
               style={{
