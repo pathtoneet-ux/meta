@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import LeadPopup from "@/components/LeadPopup";
+import FloatingSyllabus from "@/components/FloatingSyllabus";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -22,6 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <Component {...pageProps} />
       </main>
+
+      {/* 🔥 FLOATING SYLLABUS ICON */}
+      <FloatingSyllabus />
 
       {/* 🔻 FOOTER */}
       <Footer />

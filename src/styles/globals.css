@@ -289,3 +289,24 @@ body.popup-open footer {
   filter: blur(6px);
   transition: filter 0.25s ease;
 }
+
+
+/* yahn aad kiya hun*/
+
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(99, 102, 241, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(99, 102, 241, 0.7);
+  }
+}
+
+.floating-syllabus {
+  animation: pulseGlow 2s infinite;
+}
+
