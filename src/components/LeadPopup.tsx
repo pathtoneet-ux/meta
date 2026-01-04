@@ -13,10 +13,12 @@ export default function LeadPopup() {
     state: "",
   });
 
-  // 🔥 HAR PAGE + HAR REFRESH
+  // ✅ Popup open hone par
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(true);
+
+      // 👉 popup open = body me class add
       document.body.classList.add("popup-open");
       document.body.style.overflow = "hidden";
     }, 1200);
@@ -24,6 +26,7 @@ export default function LeadPopup() {
     return () => clearTimeout(timer);
   }, []);
 
+  // ❌ Agar popup band ho to kuch render hi nahi
   if (!open) return null;
 
   const handleChange = (
@@ -32,10 +35,13 @@ export default function LeadPopup() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // ✅ Popup close hone par
   const closePopup = () => {
+    setOpen(false);
+
+    // 👉 popup close = body se class hatao
     document.body.classList.remove("popup-open");
     document.body.style.overflow = "";
-    setOpen(false);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -48,6 +54,7 @@ export default function LeadPopup() {
 
     setSubmitted(true);
 
+    // 2 sec baad popup band
     setTimeout(() => {
       closePopup();
     }, 2000);
@@ -72,17 +79,42 @@ export default function LeadPopup() {
             <p>Fill your details & talk to our expert</p>
 
             <form onSubmit={handleSubmit}>
-              <input name="name" placeholder="Full Name" value={form.name} onChange={handleChange} required />
-              <input name="phone" placeholder="Mobile Number" value={form.phone} onChange={handleChange} required />
-              <input name="neetScore" placeholder="NEET Score (Optional)" value={form.neetScore} onChange={handleChange} />
-              <select name="state" value={form.state} onChange={handleChange} required>
+              <input
+                name="name"
+                placeholder="Full Name"
+                value={form.name}
+                onChange={handleChange}
+                required
+              />
+
+              <input
+                name="phone"
+                placeholder="Mobile Number"
+                value={form.phone}
+                onChange={handleChange}
+                required
+              />
+
+              <input
+                name="neetScore"
+                placeholder="NEET Score (Optional)"
+                value={form.neetScore}
+                onChange={handleChange}
+              />
+
+              <select
+                name="state"
+                value={form.state}
+                onChange={handleChange}
+                required
+              >
                 <option value="">Select State</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                <option value="Bihar">Bihar</option>
-                <option value="Rajasthan">Rajasthan</option>
-                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                <option value="Other">Other</option>
+                <option>Delhi</option>
+                <option>Uttar Pradesh</option>
+                <option>Bihar</option>
+                <option>Rajasthan</option>
+                <option>Madhya Pradesh</option>
+                <option>Other</option>
               </select>
 
               <button type="submit">Submit</button>

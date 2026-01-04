@@ -310,3 +310,30 @@ body.popup-open footer {
   animation: pulseGlow 2s infinite;
 }
 
+/* YAHAN ADD HAI */
+
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.neet-float-animation {
+  animation: floatSoft 2.8s ease-in-out infinite;
+}
+
+
+/* Popup aane par floating buttons hide */
+body.popup-open .neet-float-animation {
+  display: none !important;
+}
+
+body.popup-open .floating-syllabus {
+  display: none !important;
+}

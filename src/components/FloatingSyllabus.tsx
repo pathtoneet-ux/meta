@@ -8,7 +8,7 @@ export default function FloatingSyllabus() {
       style={{
         position: "fixed",
         right: "20px",
-        bottom: "110px", // WhatsApp ke upar
+        bottom: "150px", // WhatsApp ke upar
         zIndex: 9999,    // SABSE upar
       }}
     >
