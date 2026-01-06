@@ -5,7 +5,7 @@ export default function NEET2026Page() {
     <>
       <Head>
         <title>
-          NEET 2026 Full Guide – Exam Date, Eligibility, Pattern, Syllabus & MBBS Counselling | PathToNEET
+          NEET 2026 Full Guide – Exam Date, Eligibility, Pattern, Syllabus & MBBS Counselling | PathToNeet
         </title>
 
         <meta

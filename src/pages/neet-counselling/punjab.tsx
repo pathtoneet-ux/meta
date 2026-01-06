@@ -5,7 +5,7 @@ export default function PunjabNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Punjab NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Punjab NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

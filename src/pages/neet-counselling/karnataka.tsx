@@ -5,7 +5,7 @@ export default function KarnatakaNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Karnataka NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Karnataka NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

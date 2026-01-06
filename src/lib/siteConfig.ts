@@ -1,7 +1,7 @@
 // src/lib/siteConfig.ts
 
 const siteConfig = {
-  siteName: "PathToNEET",
+  siteName: "PathToNeet",
   tagline: "Right Guidance, Right college, Bright Future",
 
   phone: "+91-9217026137",
@@ -16,9 +16,9 @@ const siteConfig = {
   // ⭐ Social Media Links
   social: {
     whatsapp: "919217026137",
-    instagram: "https://instagram.com/pathtoneet",
-    facebook: "https://facebook.com/pathtoneet",
-    youtube: "https://youtube.com/@pathtoneet",
+    instagram: "https://instagram.com/PathToNeet",
+    facebook: "https://facebook.com/PathToNeet",
+    youtube: "https://youtube.com/@PathToNeet",
   },
 
   // ⭐ Company Footer Links

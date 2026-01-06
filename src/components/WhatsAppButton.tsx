@@ -16,7 +16,7 @@ export default function WhatsAppButton() {
   if (!mounted) return null;
 
   const message = encodeURIComponent(
-    "Hi PathToNEET, I want counselling about NEET."
+    "Hi PathToNeet, I want counselling about NEET."
   );
 
   return createPortal(

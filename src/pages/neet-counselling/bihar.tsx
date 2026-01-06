@@ -5,7 +5,7 @@ export default function BiharNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Bihar NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Bihar NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

@@ -36,14 +36,14 @@ export default function ContactPage() {
     <>
       <Head>
         <title>
-          Contact Us | MBBS & NEET Counselling Experts in India – PathToNEET
+          Contact Us | MBBS & NEET Counselling Experts in India – PathToNeet
         </title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <meta
           name="description"
-          content="Contact PathToNEET for expert NEET counselling and MBBS admission guidance in India & abroad. Call, WhatsApp or email us for quick support."
+          content="Contact PathToNeet for expert NEET counselling and MBBS admission guidance in India & abroad. Call, WhatsApp or email us for quick support."
         />
       </Head>
 

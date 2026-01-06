@@ -5,7 +5,7 @@ export default function MaharashtraNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Maharashtra NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Maharashtra NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

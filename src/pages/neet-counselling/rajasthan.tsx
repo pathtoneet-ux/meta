@@ -5,7 +5,7 @@ export default function RajasthanNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Rajasthan NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Rajasthan NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

@@ -31,8 +31,8 @@ export default async function handler(
     });
 
     await transporter.sendMail({
-      from: `"PathToNEET – Popup Lead" <${process.env.SMTP_EMAIL}>`,
-      to: "admission@pathtoneet.in",
+      from: `"PathToNeet – Popup Lead" <${process.env.SMTP_EMAIL}>`,
+      to: "admission@PathToNeet.in",
       subject: "🔥 New Popup Lead Received",
       html: `
         <h3>New Popup Lead</h3>

@@ -31,11 +31,11 @@ export default function CounsellingPage() {
   return (
     <>
       <Head>
-        <title>NEET Counselling 2026 | MBBS Admission Guidance – PathToNEET</title>
+        <title>NEET Counselling 2026 | MBBS Admission Guidance – PathToNeet</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Get expert NEET counselling and MBBS admission guidance in India. Book personalised counselling with PathToNEET."
+          content="Get expert NEET counselling and MBBS admission guidance in India. Book personalised counselling with PathToNeet."
         />
       </Head>
 

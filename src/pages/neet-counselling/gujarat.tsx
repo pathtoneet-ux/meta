@@ -5,7 +5,7 @@ export default function GujaratNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Gujarat NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Gujarat NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

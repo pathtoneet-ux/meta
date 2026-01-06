@@ -1,14 +1,15 @@
 import Head from "next/head";
 
-export default function AboutPage() {
+export default function TermsOfServicePage() {
   return (
     <>
       <Head>
-        <title>About Us | PathToNeet – Trusted NEET Counselling Platform</title>
+        <title>Terms of Service | PathToNeet</title>
         <meta
           name="description"
-          content="Know about PathToNeet – India’s trusted NEET counselling and MBBS admission guidance platform helping students secure the best medical colleges."
+          content="Terms of Service of PathToNeet – rules, responsibilities and conditions for using NEET counselling and MBBS admission services."
         />
+        <link rel="canonical" href="https://www.PathToNeet.in/terms-of-service" />
       </Head>
 
       <div style={{ fontFamily: "system-ui, sans-serif", background: "#f5f7fb" }}>
@@ -22,16 +23,16 @@ export default function AboutPage() {
             textAlign: "center",
           }}
         >
-          <p style={{ opacity: 0.85 }}>Trusted Medical Admission Experts</p>
+          <p style={{ opacity: 0.85 }}>Please Read Carefully</p>
 
           <h1 style={{ fontSize: 44, fontWeight: 800, marginTop: 10 }}>
-            About
+            Terms of
             <br />
-            <span style={{ color: "#facc15" }}>PathToNeet</span>
+            <span style={{ color: "#facc15" }}>Service</span>
           </h1>
 
           <p style={{ fontSize: 18, marginTop: 20, opacity: 0.9 }}>
-            NEET Counselling • MBBS Admissions • Career Guidance
+            Rules • Responsibilities • Fair Usage
           </p>
 
           <div style={{ marginTop: 45 }}>
@@ -51,7 +52,7 @@ export default function AboutPage() {
                   "0 15px 35px rgba(255,138,0,0.55)",
               }}
             >
-              Talk to Expert
+              Contact Support
             </button>
           </div>
         </section>
@@ -59,54 +60,44 @@ export default function AboutPage() {
         {/* ================= CONTENT ================= */}
         <section style={{ padding: "80px 20px" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-            {/* INTRODUCTION */}
+            {/* INTRO */}
             <div style={{ marginBottom: 60 }}>
               <h2 style={{ fontSize: 30, fontWeight: 700 }}>
-                Who We Are
+                Acceptance of Terms
               </h2>
               <p style={{ marginTop: 15, fontSize: 17, color: "#334155" }}>
-                <strong>PathToNeet</strong> is India’s trusted NEET counselling
-                and MBBS admission guidance platform. We help medical aspirants
-                choose the right colleges based on their NEET rank, category,
-                budget, cutoff trends, and state preferences.
-              </p>
-              <p style={{ marginTop: 10, fontSize: 17, color: "#334155" }}>
-                Our goal is to simplify the complex medical admission process
-                and provide clear, honest, and expert guidance to students and
-                parents at every step.
+                By accessing or using <strong>PathToNeet</strong>, you agree to
+                comply with and be bound by these Terms of Service. If you do
+                not agree, please do not use our services.
               </p>
             </div>
 
-            {/* WHAT WE DO */}
+            {/* SERVICES */}
             <div style={{ marginBottom: 60 }}>
               <h2 style={{ fontSize: 30, fontWeight: 700 }}>
-                What We Do
+                Our Services
               </h2>
               <ul style={{ marginTop: 20, lineHeight: "1.9" }}>
-                <li>✔ NEET UG Counselling (AIQ & State Quota)</li>
-                <li>✔ MBBS Admission in Government & Private Colleges</li>
-                <li>✔ College & Branch Prediction</li>
-                <li>✔ Cutoff & Rank Trend Analysis</li>
-                <li>✔ Choice Filling & Round-wise Strategy</li>
-                <li>✔ Documentation & Admission Support</li>
+                <li>✔ NEET UG counselling guidance</li>
+                <li>✔ MBBS college & admission support</li>
+                <li>✔ Rank, cutoff & choice filling assistance</li>
+                <li>✔ Information-based advisory services</li>
               </ul>
             </div>
 
-            {/* WHY CHOOSE US */}
+            {/* USER RESPONSIBILITY */}
             <div style={{ marginBottom: 60 }}>
               <h2 style={{ fontSize: 30, fontWeight: 700 }}>
-                Why Choose PathToNeet?
+                User Responsibilities
               </h2>
               <ul style={{ marginTop: 20, lineHeight: "1.9" }}>
-                <li>✔ Transparent & ethical counselling</li>
-                <li>✔ Experienced NEET counselling experts</li>
-                <li>✔ Data-driven college prediction</li>
-                <li>✔ Personalised one-to-one guidance</li>
-                <li>✔ Support till final seat confirmation</li>
+                <li>✔ Provide accurate and truthful information</li>
+                <li>✔ Follow official counselling rules & timelines</li>
+                <li>✔ Use the website for lawful purposes only</li>
               </ul>
             </div>
 
-            {/* TRUST BOX */}
+            {/* DISCLAIMER BOX */}
             <div style={{ marginBottom: 60 }}>
               <div
                 style={{
@@ -118,12 +109,12 @@ export default function AboutPage() {
                 }}
               >
                 <h2 style={{ fontSize: 26, fontWeight: 700 }}>
-                  Trusted by NEET Aspirants Across India
+                  Disclaimer
                 </h2>
                 <p style={{ marginTop: 15, fontSize: 17, color: "#334155" }}>
-                  We have successfully guided <strong>5000+ NEET aspirants</strong>
-                  across India. Students trust us for our realistic guidance,
-                  updated counselling knowledge, and honest admission strategy.
+                  PathToNeet provides <strong>guidance only</strong>. Final seat
+                  allotment depends on NEET rank, counselling authorities,
+                  availability of seats, and government regulations.
                 </p>
               </div>
             </div>
@@ -142,10 +133,10 @@ export default function AboutPage() {
               }}
             >
               <h2 style={{ fontSize: 28 }}>
-                Need Expert NEET Counselling?
+                Need Clarification?
               </h2>
               <p style={{ marginTop: 10 }}>
-                Get personalised guidance for MBBS admission in India & abroad.
+                Our team is here to help you understand our terms.
               </p>
 
               <button
@@ -162,7 +153,7 @@ export default function AboutPage() {
                   cursor: "pointer",
                 }}
               >
-                Talk to Expert
+                Contact Us
               </button>
             </div>
           </div>

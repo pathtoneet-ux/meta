@@ -5,7 +5,7 @@ export default function HaryanaNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Haryana NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Haryana NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

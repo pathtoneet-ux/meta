@@ -5,7 +5,7 @@ export default function MPNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Madhya Pradesh NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Madhya Pradesh NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

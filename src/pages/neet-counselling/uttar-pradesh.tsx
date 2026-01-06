@@ -5,7 +5,7 @@ export default function UPNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Uttar Pradesh NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Uttar Pradesh NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

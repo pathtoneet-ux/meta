@@ -5,7 +5,7 @@ export default function TamilNaduNEETCounselling2026Page() {
     <>
       <Head>
         <title>
-          Tamil Nadu NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNEET
+          Tamil Nadu NEET Counselling 2026 – Dates, Process, Cutoff & Colleges | PathToNeet
         </title>
 
         <meta

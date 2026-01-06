@@ -4,7 +4,7 @@ export default function NepalMBBSPage() {
   return (
     <>
       <Head>
-        <title>MBBS in Nepal 2026–26 | PathToNEET</title>
+        <title>MBBS in Nepal 2026–26 | PathToNeet</title>
         <meta
           name="description"
           content="MBBS in Nepal for Indian students – fees, top universities, eligibility, admission process and course details."

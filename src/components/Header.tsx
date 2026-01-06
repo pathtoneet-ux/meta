@@ -73,7 +73,7 @@ export default function Header() {
               <Link href="/">
                 <Image
                   src="/logo.png"
-                  alt="PathToNEET Logo"
+                  alt="PathToNeet Logo"
                   width={200}
                   height={80}
                   priority

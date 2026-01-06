@@ -5,7 +5,7 @@ export default function NEETCounselling2026() {
     <>
       <Head>
         <title>
-          NEET Counselling 2026 – Complete Process, Dates, Cutoff & MBBS Admission | PathToNEET
+          NEET Counselling 2026 – Complete Process, Dates, Cutoff & MBBS Admission | PathToNeet
         </title>
 
         <meta
@@ -204,7 +204,7 @@ export default function NEETCounselling2026() {
             </ul>
 
             {/* 11 */}
-            <h2 style={{ marginTop: 60 }}>Why Choose PathToNEET for NEET Counselling?</h2>
+            <h2 style={{ marginTop: 60 }}>Why Choose PathToNeet for NEET Counselling?</h2>
             <ul>
               <li>Experienced medical admission counsellors</li>
               <li>Data-driven college prediction</li>

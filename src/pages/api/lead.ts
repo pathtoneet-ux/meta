@@ -34,8 +34,8 @@ export default async function handler(
 
     // ✉️ Send mail
     await transporter.sendMail({
-      from: `"PathToNEET" <${process.env.SMTP_EMAIL}>`,
-      to: "admission@pathtoneet.in",
+      from: `"PathToNeet" <${process.env.SMTP_EMAIL}>`,
+      to: "admission@PathToNeet.in",
       subject: "New Counselling Enquiry",
       html: `
         <h3>New Counselling Lead</h3>
