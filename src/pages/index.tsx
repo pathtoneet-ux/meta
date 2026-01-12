@@ -1,5 +1,6 @@
 // src/pages/index.tsx
 import React from "react";
+import Head from "next/head";  // ye add kiya hun
 import Link from "next/link";
 import Image from "next/image";
 
@@ -194,25 +195,33 @@ export function HomeFeaturedColleges() {
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto px-4 py-12">
+    <>
+      <main className="max-w-7xl mx-auto px-4 py-12">
 
-      <Hero />
+        <Hero />
 
-      <TrustBar />
+        <TrustBar />
 
-      <aside className="lg:sticky lg:top-24 h-fit mt-6">
-        <NewsSidebar visibleCount={3} speed={40} />
-      </aside>
+        <aside className="lg:sticky lg:top-24 h-fit mt-6">
+          <NewsSidebar visibleCount={3} speed={40} />
+        </aside>
 
-      <div className="mt-10">
-        <OfferSection />
-      </div>
+        <div className="mt-10">
+          <OfferSection />
+        </div>
 
-      <HomeFeaturedColleges />
+        <HomeFeaturedColleges />
 
-      <FAQSection />
-      <FAQSchema />
+        <FAQSection />
+        <FAQSchema />
 
-    </main>
+      </main>
+
+      {/* ✅ CANONICAL – PAGE KE LAST ME */}
+      <Head>
+        <link rel="canonical" href="https://www.pathtoneet.in/" />
+      </Head>
+    </>
   );
 }
+
