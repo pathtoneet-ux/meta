@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /pdf/
 
-Sitemap: https://www.pathtoneet.in/sitemap.xml
+Sitemap: https://pathtoneet.in/sitemap.xml
