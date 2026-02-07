@@ -10,6 +10,7 @@ import TrustBar from "@/components/TrustBar";
 import OfferSection from "../components/OfferSection";
 import FAQSection from "@/components/FAQSection";
 import FAQSchema from "@/components/FAQSchema";
+<a href="/blog1">NEET Counselling Process</a>
 
 /* ---------------- Featured Colleges for Home ---------------- */
 const FEATURED = [
