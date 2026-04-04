@@ -263,6 +263,25 @@ export default function UPNEETCounselling2026Page() {
                   https://rmcbareilly.com/
                 </a>
               </li>
+
+              <li>Career Institute of Medical Sciences, Lucknow</li>
+              <li>FH Medical College, Agra</li>
+              <li>GS Medical College, Hapur</li>
+              <li>Heritage Institute of Medical Sciences, Varanasi</li>
+              <li>Integral Institute of Medical Sciences, Lucknow</li>
+              <li>JLN Medical College, Mathura</li>
+              <li>Krishna Mohan Medical College, Mathura</li>
+              <li>Mayo Institute of Medical Sciences, Lucknow</li>
+              <li>Muzaffarnagar Medical College, Muzaffarnagar</li>
+              <li>NIMS Medical College, Kapur</li>
+              <li>Noida Institute of Medical Sciences, Greater Noida</li>
+              <li>Prasad Institute of Medical Sciences, Lucknow</li>
+              <li>Rama Medical College, Kanpur</li>
+              <li>Rama Medical College, Hapur</li>
+              <li>Saraswati Medical College, Unnao</li>
+              <li>Subharti Institute of Medical Sciences, Meerut</li>
+              <li>TS Mishra Medical College, Lucknow</li>
+              <li>SRMS Medical College, Bareilly</li>
             </ul>
 
             {/* FINAL CTA */}
