@@ -218,8 +218,8 @@ export default function Footer() {
             {/* MAP */}
             <div className="footer-map mb-6">
               <iframe
-                title="GTB Nagar, New Delhi"
-                src="https://maps.google.com/maps?q=GTB%20Nagar%20Delhi&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                title="Burari Metro, New Delhi"
+                src="https://maps.google.com/maps?q=Jharoda%20Majra%20Burari%20Delhi&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full"
                 loading="lazy"
                 style={{ border: 0 }}
